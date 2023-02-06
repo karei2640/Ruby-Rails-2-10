@@ -36,8 +36,8 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     redirect_to books_path, notice: "更新に成功しました"
     book.update(book_params)
-
   end
+  
   private
   def book_params
     params.require(:book).permit(:title, :body)
