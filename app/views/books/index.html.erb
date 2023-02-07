@@ -14,7 +14,12 @@
  </thed>
 </ul>
 
+
 <tbody>
+ <div class="flash-notifications">
+  <% flash.each do |key, value| %>
+   <%= content_tag(:div, value, class: key) %>
+  <% end %>
  <tr>
   <% @books.each do |book| %>
   <td><%= book.title %></t>
@@ -22,7 +27,7 @@
 
  <td><%= link_to 'Show', book %></td>
  <td><%= link_to 'Edit', edit_book_path(book) %></td>
- <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: '本当に削除しますか？' } %></td>
+ <td><%= link_to 'Destroy', book, method: :delete, data: { confirm: 'Are you sure?' } %></td>
  </tr>
 <% end %>
  </tbody>
